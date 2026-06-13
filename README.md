@@ -33,3 +33,7 @@ Timers are timestamp-based: Date.now() - checkedInAt computed on every render. N
 - "Still Here?" prompt with 30s auto-release
 - Librarian dashboard — stats, session table, force release, per-desk QR
 - Toast notifications, sticky session bar
+
+## Preview
+
+![DeskGuard desk map](screenshot.png)
