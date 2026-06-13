@@ -7,7 +7,7 @@ import LibrarianView from './LibrarianView'
 import RightPanel from './SessionBar'
 import { initialDesks } from './desks'
 
-const SESSION_LIMIT = 2 * 60 * 60 * 1000  // 2 hours
+const SESSION_LIMIT = 2 * 60 * 1000  // 2 minutes (for testing)
 const AWAY_LIMIT    = 20 * 60 * 1000       // 20 min
 
 // SVG icons for sidebar
