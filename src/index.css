@@ -37,3 +37,24 @@ button {
 .abandoned-flash {
   animation: abandonedFlash 1.5s ease forwards;
 }
+/* Glow on occupied desks */
+.desk-occupied {
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.25);
+}
+
+/* Glow on away desks */
+.desk-away {
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.2);
+}
+
+/* Subtle gradient background */
+body {
+  background: linear-gradient(135deg, #0f1117 0%, #111827 100%);
+}
+
+/* Stat card glow */
+.stat-card {
+  border: 1px solid #1e2535;
+  background: linear-gradient(135deg, #131720 0%, #0f1117 100%);
+  border-radius: 12px;
+}

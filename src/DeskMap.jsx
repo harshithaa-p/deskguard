@@ -56,13 +56,13 @@ function Desk({ desk, onClick }) {
   return (
     <div
       onClick={() => onClick(desk)}
-      className={isFlashing ? 'abandoned-flash' : ''}
+      className={`${isFlashing ? 'abandoned-flash' : ''} ${desk.status === 'occupied' ? 'desk-occupied' : ''} ${desk.status === 'away' ? 'desk-away' : ''}`}
       style={{
         background: isFlashing ? '#1f2937' : isExpired ? '#1a0a0a' : config.color,
         border: `1.5px solid ${isFlashing ? '#6b7280' : isExpired ? '#7f1d1d' : config.border}`,
         borderRadius: '10px',
-        width: '110px',
-        height: '100px',
+        width: '120px',
+        height: '108px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

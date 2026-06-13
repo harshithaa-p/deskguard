@@ -98,6 +98,21 @@ function App() {
         borderBottom: '1px solid #1e2535',
         paddingBottom: '20px'
       }}>
+        {/* Announcements */}
+        <div style={{
+          background: '#0d1b2a',
+          border: '1px solid #1e3a5f',
+          borderRadius: '10px',
+          padding: '10px 20px',
+          marginBottom: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+        }}>
+          <span style={{ fontSize: '11px', fontWeight: '700', color: '#3b82f6', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Notice</span>
+          <span style={{ fontSize: '13px', color: '#94a3b8' }}>Library open 8:00 AM – 10:00 PM · Away limit: 20 min · Sessions auto-expire after 2 hrs of inactivity</span>
+        </div>
+
         <div>
           <h1 style={{ fontSize: '22px', color: '#f8fafc' }}>DeskGuard</h1>
           <p style={{ fontSize: '13px', color: '#64748b', marginTop: '4px' }}>
@@ -179,6 +194,35 @@ function App() {
         ))}
       </div>
 
+      {/* Rules */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: '12px',
+        marginBottom: '24px',
+      }}>
+        {[
+          { icon: '🟢', rule: 'Scan QR to check in', detail: 'Each desk has a unique QR code' },
+          { icon: '🟡', rule: '20-min Away limit', detail: 'Desk auto-released if timer expires' },
+          { icon: '🔴', rule: '2-hr session cap', detail: '"Still here?" prompt resets your timer' },
+        ].map(item => (
+          <div key={item.rule} style={{
+            background: '#131720',
+            border: '1px solid #1e2535',
+            borderRadius: '10px',
+            padding: '14px 18px',
+            display: 'flex',
+            gap: '12px',
+            alignItems: 'flex-start',
+          }}>
+            <span style={{ fontSize: '16px' }}>{item.icon}</span>
+            <div>
+              <div style={{ fontSize: '13px', fontWeight: '600', color: '#f8fafc' }}>{item.rule}</div>
+              <div style={{ fontSize: '12px', color: '#475569', marginTop: '2px' }}>{item.detail}</div>
+            </div>
+          </div>
+        ))}
+      </div>
       {/* Main Content */}
       {view === 'student' && (
         <DeskMap desks={desks} onDeskClick={handleDeskClick} />

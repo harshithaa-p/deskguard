@@ -12,7 +12,7 @@ export const initialDesks = [
   { id: 'C3', row: 'C', status: 'occupied', studentName: 'Meera', checkedInAt: Date.now() - 1000 * 60 * 8 },
   { id: 'C4', row: 'C', status: 'free' },
   { id: 'D1', row: 'D', status: 'occupied', studentName: 'Karan', checkedInAt: Date.now() - 1000 * 60 * 63 },
-  { id: 'D2', row: 'D', status: 'free' },
+  { id: 'D2', row: 'D', status: 'away', studentName: 'Aditya', checkedInAt: Date.now() - 1000 * 60 * 90, awayAt: Date.now() - 1000 * 60 * 25 },
   { id: 'D3', row: 'D', status: 'away', studentName: 'Sneha', checkedInAt: Date.now() - 1000 * 60 * 45, awayAt: Date.now() - 1000 * 60 * 5 },
   { id: 'D4', row: 'D', status: 'free' },
   { id: 'E1', row: 'E', status: 'free' },
