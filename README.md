@@ -1,16 +1,35 @@
-# React + Vite
+# DeskGuard — Library Seat Booking & Anti-Hoarding App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live color-coded desk map with QR check-in, 20-minute Away cap, and auto-abandon for library seat management.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://deskguard-blond.vercel.app
 
-## React Compiler
+## How to Run
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+npm install
+npm run dev
 
-## Expanding the ESLint configuration
+Opens at http://localhost:5173 — no sign-up, no config needed.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Environment Variables
+
+None. The prototype runs entirely in the browser with React state.
+
+## Demo Mode
+
+"Still Here?" fires every 2 minutes (represents 2 hours in production). The 20-min Away timer runs at real speed.
+
+## Architecture Note — Timer Design
+
+Timers are timestamp-based: Date.now() - checkedInAt computed on every render. No setTimeout for business logic — timers survive tab sleep and have zero drift. In production these move server-side (node-cron sweeping every 60s) so a closed browser cannot leave ghost sessions.
+
+## Features
+
+- Live color-coded desk map (Green / Red / Amber / Abandoned)
+- QR check-in with name input
+- 20-minute Away countdown with auto-release
+- "Still Here?" prompt with 30s auto-release
+- Librarian dashboard — stats, session table, force release, per-desk QR
+- Toast notifications, sticky session bar
