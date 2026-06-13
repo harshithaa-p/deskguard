@@ -22,8 +22,8 @@ function QRModal({ desk, onClose }) {
       <div
         onClick={e => e.stopPropagation()}
         style={{
-          background: '#131720',
-          border: '1px solid #1e2535',
+          background: '#101010',
+          border: '1px solid rgba(139,92,246,0.2)',
           borderRadius: '16px',
           padding: '36px',
           width: '320px',
@@ -63,8 +63,8 @@ function QRModal({ desk, onClose }) {
         </div>
 
         <div style={{
-          background: '#0f1117',
-          border: '1px solid #1e2535',
+          background: '#080808',
+          border: '1px solid rgba(139,92,246,0.15)',
           borderRadius: '8px',
           padding: '10px 16px',
           width: '100%',
